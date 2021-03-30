@@ -12,6 +12,6 @@
 
 • If you are searching for _Code, _Algorithms used and Accuracy of the model...Click the link given below: link:"https://github.com/Vamshidhar1/Bank-Marketing-Prediction/blob/main/Customer%20Campagin.ipynb"
 
-• For complete project files to deploy this model.link below: Link:"https://github.com/Vamshidhar1/Bank-Marketing-Prediction"
+• For complete project files to deploy this model.link below: Link: "https://github.com/Vamshidhar1/Bank-Marketing-Prediction"
 
 • Please do ⭐ the repository, if it helped you in anyway.
