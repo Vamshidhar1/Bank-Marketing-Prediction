@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Campagin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+
+.login{
+  margin-top: 60px;
+  margin-left: 515px;
+}
+input{
+  margin-top: 15px;
+  margin-left: -25px;
+  width: 300px;
+  padding-left: 5px;
+  border-style: outset;
+  background-color: white;
+  height: 30px;
+  font-style: italic;
+  text-align: center;
+}
+
+.button {
+  border-radius: 10px;
+  border: 2px solid #000000;
+  height: 40px;
+  width:100px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-left: 75px;
+  font-style: italic;
+}
+.button:hover {
+  background-color: #393E46;
+  color: white;
+}
+h3{
+  margin-left: -31px;
+  font-weight: bold;
+  font-size: 25px;
+  color: black;
+  font-style: italic;
+}
+h4{
+  margin-left: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  font-style: italic;
+}
+body{
+  background-image: radial-gradient(skyblue,white,blue);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1280px 1080px;
+}
+select{
+  margin-top: 15px;
+  margin-left: -25px;
+  width: 300px;
+  padding-left: 5px;
+  background-color: white;
+  height: 30px;
+  font-style: italic;
+}
+
+</style>
+        
+</head>
+<body>
+    <div class="login">
+        <h3>Bank Marketing Prediction</h3>
+        
+        <!--Main input for receiving query to our ML-->
+        <form action="{{ url_for('y_predict')}}"method="post">
+        <div>
+        <input type="number" name="age" step="any" placeholder="Age" required="required"/><br>
+        
+	<select name="job" id="job" required>
+	<option value="">Job Status</option>
+  	<option value="management">Management</option>
+  	<option value="technician">Technician</option>
+  	<option value="entrepreneur">Entrepreneur</option>
+  	<option value="blue-collar">Blue-Collar</option>
+	<option value="services">Services</option>
+	<option value="admin">Admin</option>
+	<option value="self-employed">Self-Employed</option>
+	<option value="unemployed">Unemployed</option>
+	<option value="housemaid">Housemaid</option>
+	<option value="retired">Retired</option>
+	<option value="student">Student</option>
+	<option value="unknown">Unknown</option>
+	</select>
+	</br>
+	
+	<select name="marital" id="marital" required>
+	<option value="">Marital Status</option>
+  	<option value="married">Married</option>
+  	<option value="single">Single</option>
+	<option value="divorced">Divorced</option>
+	</select>
+	</br>
+
+	<select name="education" id="education" required>
+	<option value="">Education</option>
+  	<option value="tertiary">Tertiary</option>
+  	<option value="secondary">Secondary</option>
+	<option value="primary">Primary</option>
+	<option value="unknown">Unknown</option>
+	</select>
+	</br>
+
+	<select name="housing" id="housing" required>
+	<option value="">Housing Loan</option>
+  	<option value="yes">Yes</option>
+  	<option value="no">No</option>
+	</select>
+	</br>
+
+	<select name="loan" id="loan" required>
+	<option value="">Personal Loan</option>
+  	<option value="yes">Yes</option>
+  	<option value="no">No</option>
+	</select>
+	</br>
+
+	<select name="contact" id="contact" required>
+	<option value="">Contact</option>
+  	<option value="unknown">Unknown</option>
+  	<option value="cellular">Cellular</option>
+	<option value="telephone">Telephone</option>
+	</select>
+	</br>
+
+        <input type="number" name="duration" step="any" placeholder="Last Contact Duration (Seconds)" required="required"/> <br>
+        
+        <input type="number" name="campaign" step="any" placeholder="Contacts Performed During Campagin" required="required"/><br>
+        
+        <input type="number" name="previous" step="any" placeholder="Contacts Performed Before Campagin" required="required"/><br>
+	<br>
+        
+        <button class="button button2">Predict</button>
+    </div>
+       <h4> {{ prediction_text }} </h4>
+        <br>
+        <br>
+    </div>
+    
+    
+</body>
+</html>
